@@ -1,0 +1,48 @@
+[2025-08-26]
+-configured Apollo as the website recommended
+-creating .env file to keep the source API separated from the rest of the app
+(the point of .env file is to keep some data secure, like keys and stuff, and it's in git ignore list, so it won't be pushed into git repository)
+-sending a test query to get data from Hygraph
+-installing Material UI:
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+-import desired elements to create App Bar, and creating it
+-changing the default font and direction of the app via theme.js
+-apply the changed theme by importing the theme into index.js and wrap the app with themeProvider
+-adding persian fonts to the project,by
+1- defining the fonts in fonts.css
+2- declaring the default font in index.css
+3- overwriting the default font of mui YekanBakh
+
+[2025-08-27]
+Episode 297:
+-working with grid to set up the main page:
+note: the griding method mentioned in the videos doesn't working:
+->a Grid with property "container" that wraps all items.
+->every child is a Grid component ith the property "item".
+->define the width on different sizes by passing an object to the property "size":
+size={{ xs: 12, md: 9 }}
+note:every unit of Material UI is 8px;
+for example: padding:{3} equals to 24 px
+
+Episode298:
+-defining layout:
+->defining Footer.js
+->we already defined Header.js
+->defining Layout.js to have a single component that wraps the whole thing
+
+small irrelevant note: when we define multiple index.js in every folder, when we want to import that file, we cam omit the file name.
+
+Episode 299:
+fetching the blogs data using graphql and for npw, logging them in console.
+note: import useQuery from @Apollo/client/react
+
+Episode 300:
+rendering blogs and order them:
+note: there are several ways to pass post info to it's card:
+1- to pass the post as post={post}
+2- to pass each data individually like title={title} author={author} etc.
+3- to spread it before passing, and receive each data individually:
+post={...post}
+
+Episode 301:
