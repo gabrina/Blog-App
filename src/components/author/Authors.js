@@ -2,7 +2,7 @@ import { Avatar, Divider, Typography } from "@mui/material";
 import { useQuery } from "@apollo/client/react";
 import { Grid } from "@mui/material";
 import { GET_AUTHORS_INFO } from "../../GraphQL/Queries";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 
 function Authors() {
@@ -18,8 +18,8 @@ function Authors() {
       {authors.map((author, index) => (
         <React.Fragment key={author.id}>
           <Grid item size={{ xs: 12 }} padding={2}>
-            <a
-              href={`/authors/${author.slug}`}
+            <Link
+              to={`/authors/${author.slug}`}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -30,7 +30,7 @@ function Authors() {
               <Typography component="p" variant="p" color="text.secondary">
                 {author.name}
               </Typography>
-            </a>
+            </Link>
           </Grid>
           {index !== authors.length - 1 && (
             <Grid item size={{ xs: 12 }}>

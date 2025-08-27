@@ -59,3 +59,51 @@ Episode 302:
 Episode 303:
 -developing authors card using mui
 ->like blogs, but each row isn't developed in another component
+
+Episode 304:
+-developing the routes in app.js, wrapping the whole thing in index.js
+exercise: try to develop 2 more pages, where for /blogs, the user sees a list of blogs,
+and for /authors, the user sees a list of authors.
+-uncommenting the links we commented in 303
+
+Episode 305:
+-at first, write the right query to get author detail by slug.
+-we get slug from URL using useParams, calling query with it and get single row of data
+Note: authors{} in query returns a list with desired conditions,
+ but author{} in query return the exact record we need
+
+Episode 306:
+nothing special, just styling
+
+Episode 307:
+working with richtext:
+each richtext has a property called html, which contains the text and the styles.
+way1: we can set the DOM by the property innerHTML, but that's deprecated.
+React gives a new ability:
+        <Grid item size={{ xs: 12 }}>
+          <div dangerouslySetInnerHTML={{ __html: description.html }}></div>
+        </Grid>
+why it is called dangerouslySetInnerHTML?
+because from a secure perspective, it's a dangerous action.
+
+way2:using sanitizer:
+step1->install the package: npm install sanitize-html
+step2->this package will eliminate dangerous XSS attacks.
+step3->rewrite the div like this:
+        <div
+            dangerouslySetInnerHTML={{ __html: sanitizeHTML(description.html) }}
+      ></div>
+step4->pay attention that scanning the html for Malicious code must be done in back-end,
+but we do it here as a double check.
+
+for showing the author's posts section, we reused CardEL.js with minor justification:
+we don't need to show the header of the card in author page since it's meaningless,
+so instead, we don't pass the author info, and use that lack of info to check what page are we at.
+smart, right?
+
+Episode 308:
+Loader
+Note: make sure any package you get, is compatible with react19;
+
+[2025-08-28]
+Episode 309:
