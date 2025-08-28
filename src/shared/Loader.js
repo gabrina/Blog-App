@@ -11,7 +11,7 @@ function Loader() {
         paddingTop: "20px",
       }}
     >
-      <PacmanLoader />
+      <PacmanLoader color="#9c27b0" />
     </div>
   );
 }

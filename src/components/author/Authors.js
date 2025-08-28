@@ -4,10 +4,12 @@ import { Grid } from "@mui/material";
 import { GET_AUTHORS_INFO } from "../../GraphQL/Queries";
 import { Link } from "react-router-dom";
 import React from "react";
+import Loader from "../../shared/Loader";
+
 
 function Authors() {
   const { data, loading, error } = useQuery(GET_AUTHORS_INFO);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />
   if (error) return <p>Something went wrong</p>;
   const { authors } = data;
   return (
@@ -27,7 +29,7 @@ function Authors() {
               }}
             >
               <Avatar src={author.avatar.url} sx={{ marginLeft: 2 }} />
-              <Typography component="p" variant="p" color="text.secondary">
+              <Typography component="p" variant="p" color="secondary">
                 {author.name}
               </Typography>
             </Link>

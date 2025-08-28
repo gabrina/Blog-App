@@ -107,3 +107,52 @@ Note: make sure any package you get, is compatible with react19;
 
 [2025-08-28]
 Episode 309:
+developing blog page:
+just like author Page, we must query the post data the exact same way.
+all ypu need is paying attention to your query.
+we have not added comments yet(later to be clear why)
+
+Episode 310:
+-got arrow icon from https://mui.com/material-ui/material-icons/
+-how to send user back to the page he came from?
+using useNavigate:
+          <ArrowBackRoundedIcon onClick={()=>navigate(-1)}/>
+
+-using <img> for cover photo.
+
+Episode 311:
+-creating comment form
+->using this page to create input elements from Material UI:https://mui.com/material-ui/react-text-field/#basic-textfield
+for comment text, we used 2 more property to make it bigger:
+multiline       minRows={4}
+
+Episode 312:
+-writing the right mutation to commit a comment
+-export it and use it in CommentForm.js
+-installing react-toastify to show proper alerts:https://www.npmjs.com/package/react-toastify
+
+npm install --save react-toastify
+
+import { ToastContainer, toast } from 'react-toastify';
+
+use <ToastContainer /> in the component, then on events you can create taost like:
+      toast.warn("تمام فیلدها رو پر کن", { position: "bottom-right" });
+
+Maximum call stack size exceeded:
+this error means we are trapped in a loop. see where a recursion is happening
+
+Episode 313:
+writing the right query to get comments.
+note the relations defined in DB(i guess mine was different from Milad's)
+like before, fetch them in Comments.js and render them.
+
+Episode 314:
+?there is this line of code in Comments.js that is not applied correctly.
+all the same, list rendering
+
+Episode 315:
+how to immigrate from cra to Vite?
+give link to home page in header:Solved
+2 unsolved problems?
+?there is this line of code in Comments.js that is not applied correctly.
+align the input files in CommentForm.js to rtl.

@@ -4,15 +4,16 @@ import { useQuery } from "@apollo/client/react";
 import { Avatar, Container, Grid, Typography } from "@mui/material";
 import sanitizeHTML from "sanitize-html";
 import CardEL from "../../shared/CardEL";
+import Loader from "../../shared/Loader"
 
 function AuthorPage() {
   const { slug } = useParams();
   const { data, loading, error } = useQuery(GET_AUTHOR_BY_SLUG, {
     variables: { slug },
   });
-  if (loading) return <h3>Loading...</h3>;
+  if (loading) return <Loader />;
   if (error) return <h3>Something went wrong.</h3>;
-  console.log(data);
+  //console.log(data);
 
   const {
     author: { name, avatar, field, description, posts },
@@ -32,7 +33,7 @@ function AuthorPage() {
           <Typography component="h3" variant="h5" fontWeight="700" mt={4}>
             {name}
           </Typography>
-          <Typography component="p" variant="h5" color="text.secondary" mt={2}>
+          <Typography component="p" variant="h5" color="secondary" mt={2}>
             {field}
           </Typography>
         </Grid>

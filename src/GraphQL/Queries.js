@@ -56,4 +56,47 @@ const GET_AUTHOR_BY_SLUG = gql`
   }
 `;
 
-export { GET_BLOGS_INFO, GET_AUTHORS_INFO,GET_AUTHOR_BY_SLUG };
+const GET_BLOG_BY_SLUG = gql`
+  query getBlogsBySLug($slug: String!) {
+    post(where: { slug: $slug }) {
+      title
+      content {
+        html
+      }
+      coverPhoto {
+        url
+      }
+      datePublished
+      # comment {
+      #   name
+      #   email
+      #   text
+      # }
+      author {
+        name
+        field
+        avatar {
+          url
+        }
+      }
+    }
+  }
+`;
+
+const GET_COMMENTS_BY_POST_SLUG = gql`
+  query getCommentsByPostSlug($slug: String!) {
+    comments(where: { post: { slug: $slug } }) {
+      name
+      email
+      text
+    }
+  }
+`;
+
+export {
+  GET_BLOGS_INFO,
+  GET_AUTHORS_INFO,
+  GET_AUTHOR_BY_SLUG,
+  GET_BLOG_BY_SLUG,
+  GET_COMMENTS_BY_POST_SLUG,
+};
