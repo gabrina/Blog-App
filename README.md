@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# Blog-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**A practice project using GraphQL, GraphCMS, and Material UI, bootstrapped with Create React App**
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Getting Started](#getting-started)  
+- [Available Scripts](#available-scripts)  
+- [Deployment](#deployment)  
+- [Environment Variables](#environment-variables)  
+- [Contributing](#contributing) 
+- [License](#license) 
+
+---
+
+## Overview
+
+A blog application built with React (via Create React App), leveraging GraphQL for data querying, GraphCMS as a headless CMS, and Material UI for styling and layout.
+
+This project helps demonstrate proficiency in front-end development, CMS integration, API consumption, and UI theming.
+
+---
+
+## Features
+
+- Fetches and displays blog data using **GraphQL** queries.
+- **GraphCMS** handles content creation and serves as backend content provider.
+- Utilizes **Material UI** for a sleek, responsive user interface.
+- Client-side routing to browse posts by slug.
+- Responsive design suitable for desktop and mobile use.
+
+---
+
+
+## Tech Stack
+
+- **Frontend**: React (Create React App)
+- **Data Layer**: GraphQL (Apollo Client or react-apollo)
+- **CMS**: GraphCMS (Headless CMS)
+- **UI**: Material UI  
+- **Routing**: React Router
+
+---
+
+## Getting Started
+
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/gabrina/Blog-App.git
+    cd Blog-App
+    ```
+
+2. **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3. **Set up environment variables**
+    - Duplicate `.env.example` (or create `.env`) with:
+      ```
+      REACT_APP_GRAPHCMS_ENDPOINT=your_graphcms_endpoint
+      ```
+    - Replace `your_graphcms_endpoint` with your GraphCMS API endpoint.
+
+4. **Run the development server**
+    ```bash
+    npm start
+    ```
+    The app will launch at [http://localhost:3000](http://localhost:3000).
+
+5. **Build for production**
+    ```bash
+    npm run build
+    ```
+    Bundled files will be generated in the `build/` folder for deployment.
+
 
 ## Available Scripts
 
-In the project directory, you can run:
+In development mode:
+| Command         | Description                                                              |
+|-----------------|--------------------------------------------------------------------------|
+| `npm start`     | Starts the development server on [http://localhost:3000].                |
+| `npm test`      | Launches the test runner in interactive watch mode .     |
+| `npm run build` | Builds the app for production deployment in the `build/` directory. |
+| `npm run eject` | Exposes underlying configurations; use with caution .    |
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Deployment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To deploy to services like **Netlify**, **Vercel**, or **GitHub Pages**:
+1. Push the `build/` folder to your chosen hosting.
+2. Ensure environment variables (e.g., GraphCMS API endpoint) are properly configured on the hosting dashboard.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Environment Variables
 
-### `npm run build`
+| Variable                        | Description                          |
+|---------------------------------|--------------------------------------|
+| `REACT_APP_GRAPHCMS_ENDPOINT`  | URL used by Apollo or GraphQL client to fetch post data |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+- Fork the repository  
+- Create a feature branch (`git checkout -b feature/YourFeature`)  
+- Commit your changes (`git commit -m 'Add YourFeature'`)  
+- Push to the branch (`git push origin feature/YourFeature`)  
+- Open a Pull Request
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+MIT
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---  
